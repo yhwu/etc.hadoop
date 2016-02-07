@@ -92,32 +92,32 @@ hadoop fs -ls -R /user
 
 ```
 #### compile hadoop to get rid of cannot load native library issue####
-http://pl.postech.ac.kr/~maidinh/blog/?p=170
-For CentOS
-Install Maven
-# cd /home/maidinh/maven
-# wget http://mirror.apache-kr.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
-# tar xvf apache-maven-3.2.5-bin.tar.gz
-Update .bashrc
+# http://pl.postech.ac.kr/~maidinh/blog/?p=170
+# For CentOS
+## Install Maven
+cd /home/maidinh/maven
+wget http://mirror.apache-kr.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+tar xvf apache-maven-3.2.5-bin.tar.gz
+# Update .bashrc
 export JAVA_HOME=/usr/java/latest
 unset M2
 unset M2_HOME
 export PATH=/home/maidinh/maven/apache-maven-3.2.5/bin:$PATH
-# source ~/.bashrc
-# mvn -version
-Install ProtocolBuffer 2.5.0
-# wget https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
-# tar xvf protobuf-2.5.0.tar.gz
-# cd protobuf-2.5.0
-# ./configure
-# make
-# sudo make install
-# protoc --version
-Install cmake, zlib, openssl, snappy
-# sudo yum install cmake zlib-devel openssl-devel snappy-devel
-Compile Hadoop
-# tar xvf hadoop-2.6.0-src.tar.gz
-# cd hadoop-2.6.0-src
-# mvn package -Pdist,native -DskipTests -Dtar -Dmaven.javadoc.skip=true -Drequire.snappy -Drequire.openssl
-Check results in hadoop-dist/target/
+source ~/.bashrc
+mvn -version
+# Install ProtocolBuffer 2.5.0
+wget https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
+tar xvf protobuf-2.5.0.tar.gz
+cd protobuf-2.5.0
+./configure
+make
+sudo make install
+protoc --version
+# Install cmake, zlib, openssl, snappy
+sudo yum install cmake zlib-devel openssl-devel snappy-devel
+# Compile Hadoop
+tar xvf hadoop-2.6.0-src.tar.gz
+cd hadoop-2.6.0-src
+mvn package -Pdist,native -DskipTests -Dtar -Dmaven.javadoc.skip=true -Drequire.snappy -Drequire.openssl
+## Check results in hadoop-dist/target/
 ```
