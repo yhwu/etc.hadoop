@@ -82,7 +82,7 @@ export PATH=.:$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 ## system user yinghua
 system user: yinghua yinghua:wheel
 export PATH=.:$HOME/bin:/home/hadoop/hadoop/bin:$PATH
-#export HADOOP_USER_NAME=hadoop
+#export HADOOP_USER_NAME=hadoop  # in case running as a regular user doesn't work
 
 ## run as hadoop user
 hadoop fs -mkdir /user/yinghua
