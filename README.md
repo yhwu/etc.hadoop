@@ -7,6 +7,14 @@ http://tecadmin.net/setup-hadoop-2-4-single-node-cluster-on-linux/#
 http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
 http://whiteboxdeveloper.blogspot.com/2014/04/creating-multiple-users-in-hadoop.html
 http://pl.postech.ac.kr/~maidinh/blog/?p=170
+
+## approach
+1. designate a hadoop user, hadoop;
+2. make sure user hadoop works;
+3. give 777 permission to hadoop.tmp.dir;
+4. limit user auser hdfs directory to /user/auser and set proper permissions;
+5. change staging directory to /user/auser, done.
+Make sure stop and start hadoop after modifying configuration files.
 ```
 
 ```
