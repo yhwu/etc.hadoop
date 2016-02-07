@@ -38,11 +38,11 @@ export YARN_HOME=$HADOOP_HOME
 export PATH=.:$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 
 
-## system user user1
-system user: user1 user1:wheel
+## system user yinghua
+system user: yinghua yinghua:wheel
 export PATH=.:$HOME/bin:/home/hadoop/hadoop/bin:$PATH
-hadoop fs -mkdir /user/user1
-hadoop fs -chown -R user1:wheel /user/user1
+hadoop fs -mkdir /user/yinghua
+hadoop fs -chown -R yinghua:wheel /user/yinghua
 hadoop fs -ls -R /user
 ```
 
