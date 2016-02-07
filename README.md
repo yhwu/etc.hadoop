@@ -18,6 +18,39 @@ data node:  http://localhost:50075/
 ```
 
 ```
+## important config files
+[core-site.xml]
+<property>
+  <name>hadoop.tmp.dir</name>
+  <value>/home/hadoop/hadooptmpdir</value>
+  <description>A base for other temporary directories.</description>
+</property>
+
+[hadoop-env.sh]
+export JAVA_HOME=/usr/lib/jvm/jre-openjdk
+# disable IPV6
+export HADOOP_OPTS=-Djava.net.preferIPv4Stack=true
+
+[hdfs-site.xml]
+<property>
+  <name>dfs.name.dir</name>
+    <value>file:///home/hadoop/hadoopdata/hdfs/namenode</value>
+</property>
+
+<property>
+  <name>dfs.data.dir</name>
+    <value>file:///home/hadoop/hadoopdata/hdfs/datanode</value>
+</property>
+
+[mapred-site.xml]
+<property>
+  <name>yarn.app.mapreduce.am.staging-dir</name>
+  <value>/user</value>
+</property>
+```
+
+
+```
 ## system info
 system user: hadoop hadoop:hadoop
 installation directory : /home/hadoop/hadoop
