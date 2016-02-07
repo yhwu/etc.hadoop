@@ -74,6 +74,9 @@ export PATH=.:$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 ## system user yinghua
 system user: yinghua yinghua:wheel
 export PATH=.:$HOME/bin:/home/hadoop/hadoop/bin:$PATH
+#export HADOOP_USER_NAME=hadoop
+
+## run as hadoop user
 hadoop fs -mkdir /user/yinghua
 hadoop fs -chown -R yinghua:wheel /user/yinghua
 hadoop fs -ls -R /user
